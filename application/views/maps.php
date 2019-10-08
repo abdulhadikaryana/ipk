@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Indeks Pembangunan Kebudayaan</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
+    <link rel="stylesheet" href="<?php echo base_url().'assets/css/map-style.css'?>" />
+  </head>
+  <body>
+  <!-- This div displays the container, tabs, and map; add title and caption if desired -->
+  <div class="interactiveContainer">
+    <div class="tabBar">
+      <!-- Edit the labels for each tab, such as "1910" -->
+      <div id="tab1" class="tabItem selected">Dimensi 1</div>
+      <div id="tab2" class="tabItem">Dimensi 2</div>
+      <div id="tab3" class="tabItem">Dimensi 3</div>
+      <div id="tab4" class="tabItem">Dimensi 4</div>
+      <div id="tab5" class="tabItem">Dimensi 5</div>
+      <div id="tab6" class="tabItem">Dimensi 6</div>
+      <div id="tab7" class="tabItem">Dimensi 7</div>
+      <div id="tab8" class="tabItem">IPK</div>
+    </div>
+      <div id="map"></div>
+  </div>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
+    <script type="text/javascript" src="<?php echo HTTP_JS_PATH;?>map-script.js"></script>
+  </body>
+</html>
