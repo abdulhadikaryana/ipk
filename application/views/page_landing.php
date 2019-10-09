@@ -225,7 +225,7 @@
                         title: {
                           display: true,
                           position: "top",
-                          text: "IPK NASIONAL 2018",
+                          text: "IPK NASIONAL 2018 "+<?php echo $ipk;?>,
                           fontSize: 18,
                           fontColor: "#111"
                         },

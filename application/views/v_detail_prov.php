@@ -66,15 +66,7 @@
         <a href="#intro" class="scrollto"><img src="<?php echo HTTP_IMAGES_PATH;?>logo3.png" alt="" class="img-fluid"></a>
       </div>
 
-      <nav class="main-nav float-right d-none d-lg-block">
-        <ul>
-          <li class="active"><a href="#intro">Beranda</a></li>
-          <li><a href="#about">Tentang</a></li>
-          <li><a href="#hasil_hitung">Hasil</a></li>
-          <li><a href="#nilaiprovinsi">Simulasi</a></li>
-          
-        </ul>
-      </nav><!-- .main-nav -->
+      
       
     </div>
   </header><!-- #header -->
@@ -82,16 +74,18 @@
   <!--==========================
     Intro Section
   ============================-->
-  <section id="intro-detail" class="clearfix">
-    <div class="container intro-detail">
+  <section id="intro" class="clearfix" style="background: url(<?php echo HTTP_IMAGES_PATH;?>bawah.png) ;">
+    <div class="container">
 
-      
+      <div class="intro-img">
+        
+      </div>
 
-      <div class="intro-info">
+      <div class="intro-info" style="color:black">
         <h2>Indeks<br><span>Pembangunan</span><br>Kebudayaan</h2>
         <div>
           
-          <a href="<?php echo base_url();?>page/maps_all" class="btn-services scrollto">Kembali</a>
+          <a href="<?php echo base_url();?>" class="btn-services scrollto">kembali</a>
         </div>
       </div>
 
@@ -107,7 +101,7 @@
       <div class="row no-gutter">
         <div class="container">
           <header class="section-header">
-            <h3 class="section-title">Hasil Penghitungan</h3>
+            <h3 class="section-title">Nilai Per dimensi</h3>
           </header>   
         </div>
 
@@ -165,7 +159,7 @@
                         title: {
                           display: true,
                           position: "top",
-                          text: "",
+                          text: "Nilai IPK 2018 "+<?php echo $ipk;?>,
                           fontSize: 18,
                           fontColor: "#111"
                         },
@@ -183,10 +177,44 @@
                  
                   });
                 </script>
-
-
             </div>
-            
+          </div>
+        </div>
+        <div class="container">
+          <div class="row">
+            <div class="col">
+
+              <div class="container">
+                <h3>Nilai Per Indikator</h3>
+                <div class="table-responsive">
+                  <table class="table table-striped">
+                    <thead class="thead-dark">
+                      <tr>
+                        <th>Kode Indikator</th>
+                        <th>Indikator</th>
+                        <th>Nilai</th>
+                        <th>Sumber Data</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <?php
+                        foreach ($table_data->result() as $row) {
+                          ?>
+                          <tr>
+                            <td><?php echo $row->KODE_IND;?></td>
+                            <td><?php echo $row->NAMA_IND;?></td>
+                            <td><?php echo $row->NILAI_IND;?></td>
+                            <td><?php echo $row->SOURCE_IND?>;</td>
+                          </tr>
+                          <?php
+                        }
+                      ?>
+                    </tbody>
+                  </table>
+                </div>
+                
+              </div>
+            </div>
           </div>
         </div>
 

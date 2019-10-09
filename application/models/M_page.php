@@ -17,6 +17,8 @@ class M_page extends CI_Model {
         foreach($record as $row) {
           if ($row->NAMA_DIM != "IPK") {
             $data['chart']['label'][] = $row->NAMA_DIM." ( ".$row->NILAI_DIM." )";
+          }else{
+            $data['ipk'] = $row->NILAI_DIM;
           } 
           
             //$data['chart']['label'][] = $row->NAMA_DIM." ( ".$row->NILAI_DIM." )";
@@ -31,9 +33,11 @@ class M_page extends CI_Model {
   public function getDescContent($dimensi){
     $data= [];
     $dim = $dimensi;
-    $query = $this->db->query("SELECT DESKRIPSI_DIM FROM ref_dimensi where KODE_DIM = '$dim' ");
+    $query = $this->db->query("SELECT DESKRIPSI_DIM,NAMA_DIM,ASSET_DIM FROM ref_dimensi where KODE_DIM = '$dim' ");
     foreach ($query->result() as $row) {
-      $data = $row->DESKRIPSI_DIM;
+      $data['text'] = $row->DESKRIPSI_DIM;
+      $data['nama_dim'] = $row->NAMA_DIM;
+      $data['asset'] = $row->ASSET_DIM;
     }
     return $data;
   }
@@ -54,6 +58,8 @@ class M_page extends CI_Model {
         foreach($record as $row) {
           if ($row->NAMA_DIM != "IPK") {
             $data['chart']['label'][] = $row->NAMA_DIM." ( ".$row->NILAI_DIM." )";
+          }else{
+            $data['ipk'] = $row->NILAI_DIM;
           } 
           
             //$data['chart']['label'][] = $row->NAMA_DIM." ( ".$row->NILAI_DIM." )";
@@ -67,7 +73,14 @@ class M_page extends CI_Model {
 
   public function getIndikatorProv($kode){
     $kode_prov = $kode;
-    $query =  $this->db->query("SELECT ID_DIM,NAMA_IND,NILAI_IND,SOURCE_IND,TAHUN_IND,KODE_PROV FROM nilai_ind_complete where KODE_PROV = '$kode_prov' ORDER BY ID_DIM"); 
+    $data=[];
+    $query =  $this->db->query("SELECT ID_DIM,NAMA_IND,NILAI_IND,SOURCE_IND,TAHUN_IND,KODE_PROV,KODE_IND FROM nilai_ind_complete where KODE_PROV = '$kode_prov' ORDER BY ID_DIM"); 
+    /*$record = $query->result();
+    foreach ($record as $row) {
+
+      $data['ind']['data'][] = (int)$row->NILAI_IND;
+      $data['ind']['label'][] = $row->NAMA_IND." ( ".$row->NILAI_IND." )";
+    }*/
     return $query;
   }
 
