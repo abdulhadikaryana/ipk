@@ -35,7 +35,7 @@ class Page extends CI_Controller {
 		$dim =  $this->uri->segment(3);
 		$data['text'] = $this->M_page->getDescContent($dim);
 		
-		$this->load->view('v_modal',$data);
+		$this->load->view('v_dim',$data);
 	}
 
 	public function maps(){

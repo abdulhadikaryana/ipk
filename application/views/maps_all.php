@@ -45,7 +45,7 @@ var info = L.control({position: 'bottomright'});
 
   info.update = function (props) {
     this._div.innerHTML = '<h4>Indeks Pemajuan Kebudayaan</h4>' +  (props ?
-      '<b>' + props.IPK_Provin + '</b><br /> dengan nilai ' + props.DIM1 + ' '
+      '<b>' + props.IPK_Provin + '</b><br /> dengan nilai ' + props.IPK_Rasion + ' '
       : 'Hover over a state');
   };
 
@@ -135,6 +135,7 @@ var layerIPK = L.geoJSON(IPK_Indonesia, {
         '</br><b>Nilai DIM4:</b> '+feature.properties.DIM4+
         '</br><b>Nilai DIM5:</b> '+feature.properties.DIM5+
         '</br><b>Nilai DIM6:</b> '+feature.properties.DIM6+
+        '</br><b>Nilai DIM7:</b> '+feature.properties.DIM7+
         '</br><a target="_parent" href=detail/'+feature.properties.IPK_KODE_P+'>Detail</a></br>'
       );
     }

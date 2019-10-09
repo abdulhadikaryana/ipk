@@ -115,7 +115,11 @@
             digunakan sebagai basis formulasi kebijakan bidang kebudayaan, serta menjadi acuan dalam koordinasi lintas sektor dalam pelaksanaan pemajuan 
             kebudayaan. Penyusunan indeks tersebut melibatkan berbagai pemangku kebijakan dan data yang berkaitan dengan pembangunan kebudayaan nasional.
           </p>
+          <h3>Metodologi Penghitungan</h3>
+          <p><img src="<?php echo HTTP_IMAGES_PATH;?>metodologi.png" class="img-fluid"> </p>
         </header>
+        
+        
 
         <div class="row about-container">
 
@@ -126,14 +130,14 @@
                 ?><div class="col content order-md-1 order-2 wow fadeInUp">
                   <div class="row-sm-6">
                     <div class="icon-box wow fadeInUp">
-                      <img src="<?php echo HTTP_IMAGES_PATH.$row->ASSET_DIM;?>" class="img-fluid icon center" data-href="<?php echo base_url().'page/showdimdesc/'.$row->KODE_DIM;?>" alt="">
-                     <a href="" data-href="<?php echo base_url().'page/showdimdesc/'.$row->KODE_DIM;?>" class="openBtn"><?php echo $row->NAMA_DIM;?></a>
-                    <button type="button" class="btn btn-success openBtn" value="<?php echo base_url().'page/showdimdesc/'.$row->KODE_DIM; ?>"><?php echo $row->NAMA_DIM;?></button>
+                      <img src="<?php echo HTTP_IMAGES_PATH.$row->ASSET_DIM;?>" class="img-fluid icon center"  alt="">
+                     
+                    
                     
                     </div>
                   </div>
                   <div class="row-md-6">
-                    <h4 ><p class="openBtn" ><?php echo $row->NAMA_DIM;?></p>
+                    <h4 ><a href="<?php echo base_url().'page/showdimdesc/'.$row->KODE_DIM;?>" data-href="<?php echo base_url().'page/showdimdesc/'.$row->KODE_DIM;?>" class="openBtn"><?php echo $row->NAMA_DIM;?></a>
                       
                     </h4>
 
