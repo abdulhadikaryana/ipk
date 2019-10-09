@@ -45,8 +45,7 @@ class Page extends CI_Controller {
 		//echo $dim;
 
 		$data['dim'] = substr($dim, 1);
-		//echo $data['dim'];
-		
+
 		$this->load->view('maps',$data);
 	}
 
