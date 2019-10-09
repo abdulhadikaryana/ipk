@@ -89,7 +89,7 @@ new L.tileLayer('http://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}.png
 }).addTo(map);
 
 // Edit to upload GeoJSON data file from your local directory
-$.getJSON("http://localhost/ipk2/assets/js/IPK_Indonesia.geojson", function (data) {
+$.getJSON("<?php echo base_url();?>"+"assets/js/IPK_Indonesia.geojson", function (data) {
   geoJsonLayer = L.geoJson(data, {
     style: style,
     onEachFeature: onEachFeature
