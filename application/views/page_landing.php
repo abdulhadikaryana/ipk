@@ -71,7 +71,7 @@
           <li class="active"><a href="#intro">Beranda</a></li>
           <li><a href="#about">Tentang</a></li>
           <li><a href="#hasil_hitung">Hasil</a></li>
-          <li><a href="#nilaiprovinsi">Simulasi</a></li>
+          <!--<li><a href="#nilaiprovinsi">Simulasi</a></li>-->
           
         </ul>
       </nav><!-- .main-nav -->
@@ -93,7 +93,7 @@
         <h2>Indeks<br><span>Pembangunan</span><br>Kebudayaan</h2>
         <div>
           
-          <a href="#hasil" class="btn-services scrollto">Hasil</a>
+          <a href="#hasil_hitung" class="btn-services scrollto">Hasil</a><a href="<?php echo HTTP_IMAGES_PATH;?>handbook_iPK.pdf" class ="btn-services">Undug Handbook IPK</a>
         </div>
       </div>
 

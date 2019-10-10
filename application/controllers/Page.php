@@ -57,7 +57,7 @@ class Page extends CI_Controller {
 		
 		$kode_prov = $this->uri->segment(3);
 		$data_ipk = $this->M_page->getDimensiProv($kode_prov);
-		$data['chart_data'] = json_encode($data_ipk['chart']);
+		$data['chart_dim'] = json_encode($data_ipk['chart']);
 		$data['ipk'] = $data_ipk['ipk'];		
 		$data_ind = $this->M_page->getIndikatorProv($kode_prov);
 		//$data['chart_ind'] = json_encode($data_ind['ind']);

@@ -119,7 +119,7 @@
               <script>
                   $(function(){
                       //get the radar chart canvas
-                      var cData = JSON.parse(`<?php echo $chart_data; ?>`);
+                      var cData = JSON.parse(`<?php echo $chart_dim; ?>`);
                       var ctx = $("#bar-chart");
 
                  
