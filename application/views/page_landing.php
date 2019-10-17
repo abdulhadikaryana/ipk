@@ -93,7 +93,7 @@
         <h2>Indeks<br><span>Pembangunan</span><br>Kebudayaan</h2>
         <div>
           
-          <a href="#hasil_hitung" class="btn-services scrollto">Hasil</a><a href="<?php echo HTTP_IMAGES_PATH;?>handbook_iPK.pdf" class ="btn-services">Undug Handbook IPK</a>
+          <a href="#hasil_hitung" class="btn-services scrollto">Hasil</a><a href="<?php echo HTTP_IMAGES_PATH;?>handbook_ipk.pdf" class ="btn-services">Unduh Buku IPK</a>
         </div>
       </div>
 
