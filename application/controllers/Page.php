@@ -22,10 +22,13 @@ class Page extends CI_Controller {
 	{
 		$data_ipk = $this->M_page->getDimensinasional();
 		$data['chart_data'] = json_encode($data_ipk['chart']);
+		//echo $data['chart_data'];
+		
 		$data['table_data'] = $data_ipk['table'];
 		$data['desc'] = $data_ipk['modal_data'];
 		$data['ipk'] = $data_ipk['ipk'];
 		$this->load->view('page_landing',$data);
+
 				
 	}
 

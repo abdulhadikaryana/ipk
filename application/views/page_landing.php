@@ -231,6 +231,13 @@
                         },
                         legend: {
                           display: false
+                        },  
+                        maintainAspectRatio: true,
+                          scale: {
+                              ticks: {
+                                  beginAtZero: true,
+                                  max: 100
+                              }
                         }
                       };
                  

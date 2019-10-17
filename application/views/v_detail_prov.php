@@ -82,7 +82,11 @@
       </div>
 
       <div class="intro-info" style="color:black">
-        <h2>Indeks<br><span>Pembangunan</span><br>Kebudayaan</h2>
+        <?php
+           foreach ($table_data->result() as $row) {
+             $nama_prov = $row->NAMA_PROV;
+           }
+           ?><h2>Provinsi<br><span><?php echo $nama_prov;?></span></h2>
         <div>
           
           <a href="<?php echo base_url();?>" class="btn-services scrollto">kembali</a>
@@ -165,6 +169,13 @@
                         },
                         legend: {
                           display: false
+                        },
+                        maintainAspectRatio: true,
+                          scale: {
+                              ticks: {
+                                  beginAtZero: true,
+                                  max: 100
+                              }
                         }
                       };
                  

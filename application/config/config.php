@@ -23,7 +23,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'http://ipk.kemdikbud.go.id/';
+$config['base_url'] = 'http://localhost/ipk2/';
 define('HTTP_CSS_PATH', $config['base_url'].'assets/css/');
 define('HTTP_IMAGES_PATH', $config['base_url'].'assets/img/');
 define('HTTP_JS_PATH', $config['base_url'].'assets/js/');

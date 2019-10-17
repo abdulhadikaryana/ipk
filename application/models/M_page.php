@@ -9,7 +9,7 @@ class M_page extends CI_Model {
 
   public function getDimensinasional(){
 
-    $query =  $this->db->query("SELECT ID_DIM,KODE_DIM,NAMA_DIM,NILAI_DIM,ASSET_DIM FROM nilai_dim_complete where KODE_PROV = 0000 ORDER BY ID_DIM"); 
+    $query =  $this->db->query("SELECT ID_DIM,KODE_DIM,NAMA_DIM,NILAI_DIM,ASSET_DIM FROM nilai_dim_complete where KODE_PROV = 0000"); 
  
       $record = $query->result();
         $data = [];
@@ -17,12 +17,13 @@ class M_page extends CI_Model {
         foreach($record as $row) {
           if ($row->NAMA_DIM != "IPK") {
             $data['chart']['label'][] = $row->NAMA_DIM." ( ".$row->NILAI_DIM." )";
+            $data['chart']['data'][] =  $row->NILAI_DIM;
           }else{
             $data['ipk'] = $row->NILAI_DIM;
           } 
           
             //$data['chart']['label'][] = $row->NAMA_DIM." ( ".$row->NILAI_DIM." )";
-            $data['chart']['data'][] = (int) $row->NILAI_DIM;
+            //$data['chart']['data'][] =  $row->NILAI_DIM;
         }
         $data['table']=$query;
         $data['modal_data'] = $this->getKodeDim();
@@ -58,12 +59,13 @@ class M_page extends CI_Model {
         foreach($record as $row) {
           if ($row->NAMA_DIM != "IPK") {
             $data['chart']['label'][] = $row->NAMA_DIM." ( ".$row->NILAI_DIM." )";
+            $data['chart']['data'][] = (int) $row->NILAI_DIM;
           }else{
             $data['ipk'] = $row->NILAI_DIM;
           } 
           
             //$data['chart']['label'][] = $row->NAMA_DIM." ( ".$row->NILAI_DIM." )";
-            $data['chart']['data'][] = (int) $row->NILAI_DIM;
+            
         }
         $data['table']=$query;
         $data['modal_data'] = $this->getKodeDim();
@@ -74,7 +76,7 @@ class M_page extends CI_Model {
   public function getIndikatorProv($kode){
     $kode_prov = $kode;
     $data=[];
-    $query =  $this->db->query("SELECT ID_DIM,NAMA_IND,NILAI_IND,SOURCE_IND,TAHUN_IND,KODE_PROV,KODE_IND FROM nilai_ind_complete where KODE_PROV = '$kode_prov' ORDER BY ID_DIM"); 
+    $query =  $this->db->query("SELECT NAMA_PROV,ID_DIM,NAMA_IND,NILAI_IND,SOURCE_IND,TAHUN_IND,KODE_PROV,KODE_IND FROM nilai_ind_complete where KODE_PROV = '$kode_prov' ORDER BY ID_DIM"); 
     /*$record = $query->result();
     foreach ($record as $row) {
 
